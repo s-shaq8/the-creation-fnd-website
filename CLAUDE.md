@@ -16,6 +16,10 @@ Plain HTML + CSS. No JavaScript framework, no build tools, no bundler.
 - `assets/img/` — SVG logos and hero photo
 - `assets/fonts/` — self-hosted Inter and Plus Jakarta Sans (woff2)
 
+## Agent behavior
+
+Multi-step tasks should be delegated to subagents whenever possible.
+
 ## Workflow
 
 - New features/pages: work on `test` branch first
