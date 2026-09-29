@@ -7,14 +7,15 @@
 
 ## Stack
 
-Plain HTML + CSS. No JavaScript framework, no build tools, no bundler.
+Static pre-rendered output of a Next.js site (mirrored from launchpad.stan.store, recoloured and recopied for The Creation Foundation). No build step at deploy time — Vercel serves the committed HTML/JS/CSS as-is. There is no `package.json`; do not `npm install` or expect a dev server. Editing text/markup means editing the HTML files directly (see `tools/` for the scripts originally used to batch-rewrite copy and theme colors across the mirrored pages).
 
 ## File structure
 
-- `index.html` — single page
-- `styles.css` — all styles
-- `assets/img/` — SVG logos and hero photo
-- `assets/fonts/` — self-hosted Inter and Plus Jakarta Sans (woff2)
+- `index.html`, `who.html`, `where.html`, `stan.html`, `legal.html` — pages
+- `_next/static/les/` — hashed JS/CSS bundles (Next.js runtime + chunks)
+- `brand/`, `img/`, `img-dither/`, `trail/`, `trail-dither/`, `video/` — mirrored image/video/animation-frame assets
+- `tools/` — Python scripts used to rewrite content/theme across the mirrored pages
+- `vercel.json` — clean URLs + redirects (`/agenda`, `/apply` → `/`; `/legal/*` → `/legal`)
 
 ## Agent behavior
 
