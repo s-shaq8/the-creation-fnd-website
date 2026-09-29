@@ -1,6 +1,6 @@
-# Launchpad Website
+# The Creation Foundation Website
 
-Static rebuild of the Launchpad Entrepreneurial Society landing page (hero section), matched pixel-for-pixel against the reference design at a 1870×976 viewport.
+Static rebuild of The Creation Foundation landing page (hero section), matched pixel-for-pixel against the reference design at a 1870×976 viewport.
 
 ## Run locally
 
