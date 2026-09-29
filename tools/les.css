@@ -1,0 +1,38 @@
+
+/* ---- Launchpad Entrepreneurial Society overrides ---- */
+/* No applications: hide every Apply button, the deadline clock and the floating apply dock */
+a[href="/apply"], .lp-clock, .apply-dock { display: none !important; }
+/* Footer: the Apply column */
+div:has(> a[href="/apply"]):not(:has(> a:not([href="/apply"]))) { display: none !important; }
+/* Footer links we do not use: X, TikTok, YouTube, and the old Stan legal links */
+a[href*="twitter.com/stanforcreators"], a[href*="tiktok.com/@stanforcreators"], a[href*="youtube.com/channel"],
+a[href="/legal/privacy"], a[href="/legal/cookies"], a[href*="assets.stanwith.me"], a[href^="mailto:friends@stanwith.me"] { display: none !important; }
+/* FAQ: first seven questions only, on plain white with the footer straight after */
+details[name="faq"]:nth-of-type(n+8) { display: none !important; }
+div.relative:has(> section#faq) { min-height: 0 !important; }
+div.relative:has(> section#faq) > .absolute { display: none !important; }
+#faq { padding-top: 2rem !important; padding-bottom: 5rem !important; }
+#faq h2, #faq .faq-card { color: #000 !important; text-shadow: none !important; }
+#faq .faq-card { border-color: #dae0ea !important; }
+#faq .faq-card:hover, #faq .faq-card[open] { background: #ebf0fe !important; }
+#faq .faq-card p { color: rgba(0, 0, 0, 0.75) !important; }
+#faq .faq-card summary > span:first-child { color: #808eb6 !important; }
+/* Speaker cards: hide social links that have no real target */
+a[aria-label="Shantanu Mehta on X"], a[aria-label^="Industry leaders on"], a[aria-label="Gabriel Morgan on X"] { display: none !important; }
+/* Hero: with no apply clock below it, centre the headline in the space above the photo */
+#top > .absolute { top: 64%; bottom: auto !important; transform: translateY(-50%); }
+#top > .absolute > div > :not(h1) { display: none !important; }
+/* Hero: just the name, centred (20% of the earlier large size) */
+#top h1 { max-width: none !important; font-size: clamp(0.8rem, 2.6vw, 2.2rem) !important; line-height: 1 !important; text-align: center !important; }
+/* Who page: no closing "join us" block; hovered wall tiles only brighten, they do not lift */
+section:has(p[data-progress-span]) { display: none !important; }
+[aria-label="Drifting wall of tiles"] { --dw-lift: 0px !important; }
+[aria-label="Drifting wall of tiles"] [data-tile-id] > span { box-shadow: none !important; }
+/* Header: page links sit on the right of the bar */
+header > div > nav { margin-left: auto; }
+@media (min-width: 768px) { header > div > nav + div { display: none !important; } }  /* empty Apply slot */
+/* Summit is linked from the footer only, not the header, phone menu or footer page list */
+a[href="https://summitcompetition.com"]:not([target="_blank"]) { display: none !important; }
+/* Hero title sits exactly in the horizontal centre */
+#top > .absolute > div { width: 100%; text-align: center; }
+#top h1 { margin-left: auto !important; margin-right: auto !important; }

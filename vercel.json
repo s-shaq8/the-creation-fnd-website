@@ -1,0 +1,21 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/agenda",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/apply",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/legal/:path+",
+      "destination": "/legal",
+      "permanent": false
+    }
+  ]
+}
