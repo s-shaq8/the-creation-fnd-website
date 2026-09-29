@@ -34,8 +34,8 @@
 
 /* ---------- Tokens ---------- */
 :root {
-  --accent: #2953a5;        /* ocean blue — ramp step 5 */
-  --accent-hover: #0c4087;  /* ramp step 6 */
+  --accent: #6355ff;
+  --accent-hover: #5144f0;
   --ink: #000;
   --bg: #fff;
   --divider: #1c1c1c;
@@ -194,8 +194,6 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* Dithered lodge photo, anchored to the bottom of the hero.
-   8-step sunset ramp (white → peach → rose → periwinkle → ocean → navy),
-   luminance-matched to the original purple ramp.
    Kept pixel-crisp so the dither pattern never blurs. */
 .hero__image {
   width: 100%;
