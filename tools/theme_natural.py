@@ -64,7 +64,7 @@ ROW_TONES = ['teal-coral', 'meadow', 'sky-bloom']  # who-page rows, in order
 ROW_PANELS = ['#fdf0ec', '#f1f6ea', '#eef4f9']     # matching card backgrounds
 
 # landscape canvases: (src fragment, tone)
-LANDSCAPES = [('camp-valley', 'fern-blush'), ('camp-pavilion', 'lagoon'), ('woods', 'meadow')]
+LANDSCAPES = [('camp-valley', 'sky-bloom'), ('camp-pavilion', 'lagoon'), ('woods', 'meadow')]
 BAND_RGB = (77, 133, 96)  # home FAQ band, was (40, 75, 228)
 
 COLORS = {  # blue theme -> natural theme

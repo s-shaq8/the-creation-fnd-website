@@ -38,3 +38,50 @@ a[href="https://summitcompetition.com"]:not([target="_blank"]) { display: none !
 #top > .absolute > div { width: 100%; text-align: center; }
 #top h1 { margin-left: auto !important; margin-right: auto !important; }
 .icpt__row:nth-child(3n+1) .icpt__card{background:#fdf0ec}.icpt__row:nth-child(3n+2) .icpt__card{background:#f1f6ea}.icpt__row:nth-child(3n+3) .icpt__card{background:#eef4f9}
+/* home hero */.tcf-hero__sub{margin:1.25rem auto 0;max-width:30ch;font-size:1.125rem;line-height:1.35;letter-spacing:-0.02em;color:rgb(18 33 27/.72)}.tcf-hero__cta{margin-top:1.75rem;display:flex;justify-content:center}@media (min-width:768px){.tcf-hero__sub{margin-top:1.75rem;font-size:1.375rem}.tcf-hero__cta{margin-top:2.25rem}}/* end home hero */
+
+/* legal: desktop docs layout */
+/* Scoped to the legal page only: the one section whose child div holds the
+   ol of in-page "#" links (the table of contents). Mobile/tablet untouched. */
+@media (min-width: 1024px) {
+  section:has(> div > ol > li > a[href^="#"]) {
+    display: grid;
+    grid-template-columns: 14.5rem minmax(0, 68ch);
+    column-gap: clamp(3.5rem, 6vw, 6rem);
+    align-items: start;
+  }
+  section:has(> div > ol > li > a[href^="#"]) > h1,
+  section:has(> div > ol > li > a[href^="#"]) > p { grid-column: 1 / -1; }
+  /* Left column: sticky table of contents */
+  section:has(> div > ol > li > a[href^="#"]) > div:has(> ol > li > a[href^="#"]) {
+    grid-column: 1; grid-row: 3;
+    position: sticky; top: 2.5rem;
+    max-width: none; margin-top: 3.5rem;
+    max-height: calc(100vh - 5rem); overflow-y: auto; overscroll-behavior: contain;
+  }
+  section:has(> div > ol > li > a[href^="#"]) > div:has(> ol > li > a[href^="#"]) > h2 {
+    font-family: var(--f-stan), ui-sans-serif, system-ui, sans-serif;
+    font-weight: 600; font-size: 11px; line-height: 1.2;
+    text-transform: uppercase; letter-spacing: .05em; color: #7f8c86;
+  }
+  section:has(> div > ol > li > a[href^="#"]) > div > ol:has(> li > a[href^="#"]) {
+    list-style: none; padding-left: 0; margin-top: 1rem;
+    font-size: .875rem; line-height: 1.45;
+  }
+  section:has(> div > ol > li > a[href^="#"]) > div > ol > li { margin-top: 0; }
+  section:has(> div > ol > li > a[href^="#"]) > div > ol > li + li { margin-top: .7rem; }
+  section:has(> div > ol > li > a[href^="#"]) > div > ol > li > a[href^="#"] {
+    display: block; color: #7f8c86; text-decoration: none;
+    transition: color .15s ease;
+  }
+  section:has(> div > ol > li > a[href^="#"]) > div > ol > li > a[href^="#"]:hover { color: #2d6a4f; }
+  section:has(> div > ol > li > a[href^="#"]) > div > ol > li > a[aria-current] { color: #2d6a4f; }
+  /* Right column: the document */
+  section:has(> div > ol > li > a[href^="#"]) > div:has(> section[id]) {
+    grid-column: 2; grid-row: 3;
+    max-width: 68ch; margin-top: 3.5rem;
+  }
+  section:has(> div > ol > li > a[href^="#"]) > div > section[id] { scroll-margin-top: 2.5rem; }
+}
+/* end legal */
+/* home hero layout (mirrors tools/les.css hero rules) */#top > .absolute{top:50%}#top > .absolute > div > .tcf-hero__sub{display:block !important}#top > .absolute > div > .tcf-hero__cta{display:flex !important}#top > .absolute h1{font-size:clamp(2.6rem,6.4vw,5.25rem) !important;line-height:0.95 !important}/* end home hero layout */

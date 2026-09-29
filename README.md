@@ -1,6 +1,8 @@
-# Launchpad Entrepreneurial Society website
+# The Creation Foundation website
 
-Website for Launchpad Entrepreneurial Society, a youth-run nonprofit in Vancouver running free case competitions, hackathons, school clubs and volunteer programs for high school students.
+Website for The Creation Foundation, a youth-run nonprofit in Vancouver running free case competitions, hackathons, school clubs and volunteer programs for high school students.
+
+The Creation Foundation is the public name of LaunchPad Entrepreneurial Society, the BC nonprofit society (S0083354) that is the legal entity. The site uses the public name everywhere except where the legal entity matters: the footer copyright ("LaunchPad Entrepreneurial Society, operating as The Creation Foundation") and the terms on `/legal`, which keep the society as the party.
 
 The design, animations and pixel-dither image effect (recoloured to Launchpad blue, `#284be4`) come from a static mirror of a Next.js site; all copy has been rewritten for Launchpad. There is no build step: the repo is served as plain files.
 
@@ -27,6 +29,10 @@ rm -rf _next/static/les
 git checkout 3e4e675 -- index.html who.html where.html agenda.html stan.html legal/terms.html _next
 python3 tools/les_content.py   # copy
 python3 tools/les_theme.py     # blue theme (#284be4), recoloured images, assets moved to /_next/static/les/
+python3 tools/theme_natural.py # two-tone natural palette
+python3 tools/tcf_lockup.py    # header lockup, brand/creation-lockup.png
+python3 tools/tcf_rebrand.py   # Launchpad -> The Creation Foundation (legal name kept where it matters)
+python3 tools/tcf_hero.py      # home hero: title, subtitle, initiatives button, sky-bloom landscape
 ```
 
 The script stops without saving anything if a phrase it expects isn't found. Page-wide CSS overrides (hidden Apply buttons, footer links, extra FAQs) are in `tools/les.css` and get appended by the script.
@@ -34,7 +40,7 @@ The script stops without saving anything if a phrase it expects isn't found. Pag
 ## Images
 
 - `img/` — photos (dithered at runtime by the site's own script), including `gabriel-morgan.jpg` and the two “To be announced” speaker placeholders
-- `brand/launchpad-lockup.png` — header logo; `icon.svg`, `favicon.ico`, `apple-icon.png` — site icons
+- `brand/creation-lockup.png` — header logo (drawn by `tools/tcf_lockup.py`); `icon.svg`, `favicon.ico`, `apple-icon.png` — site icons
 
 ## Run locally
 

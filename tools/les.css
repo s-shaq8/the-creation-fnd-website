@@ -1,5 +1,5 @@
 
-/* ---- Launchpad Entrepreneurial Society overrides ---- */
+/* ---- The Creation Foundation overrides ---- */
 /* No applications: hide every Apply button, the deadline clock and the floating apply dock */
 a[href="/apply"], .lp-clock, .apply-dock { display: none !important; }
 /* Footer: the Apply column */
@@ -19,11 +19,10 @@ div.relative:has(> section#faq) > .absolute { display: none !important; }
 #faq .faq-card summary > span:first-child { color: #808eb6 !important; }
 /* Speaker cards: hide social links that have no real target */
 a[aria-label="Shantanu Mehta on X"], a[aria-label^="Industry leaders on"], a[aria-label="Gabriel Morgan on X"] { display: none !important; }
-/* Hero: with no apply clock below it, centre the headline in the space above the photo */
-#top > .absolute { top: 64%; bottom: auto !important; transform: translateY(-50%); }
-#top > .absolute > div > :not(h1) { display: none !important; }
-/* Hero: just the name, centred (20% of the earlier large size) */
-#top h1 { max-width: none !important; font-size: clamp(0.8rem, 2.6vw, 2.2rem) !important; line-height: 1 !important; text-align: center !important; }
+/* Hero: name, one-line pitch and the initiatives button, centred in the space above the photo */
+#top > .absolute { top: 50%; bottom: auto !important; transform: translateY(-50%); }
+#top > .absolute > div > :not(h1, .tcf-hero__sub, .tcf-hero__cta) { display: none !important; }
+#top h1 { max-width: none !important; font-size: clamp(2.6rem, 6.4vw, 5.25rem) !important; line-height: 0.95 !important; text-align: center !important; }
 /* Who page: no closing "join us" block; hovered wall tiles only brighten, they do not lift */
 section:has(p[data-progress-span]) { display: none !important; }
 [aria-label="Drifting wall of tiles"] { --dw-lift: 0px !important; }
